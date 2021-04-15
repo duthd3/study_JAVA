@@ -13,6 +13,7 @@
 
 ### 포함
 1. 한 클래스의 멤버변수로 다른 클래스 타입의 참조변수를 선언하는 것이다.
+```java
 class Circle{ //다른클래스와 관계가 없는경우      class Point{
       int x;                                          int x;      
       int y;                                          int y;
@@ -21,7 +22,8 @@ class Circle{ //다른클래스와 관계가 없는경우      class Point{
 class Circle{
      Point c = new Point();
      int r;
-}    
+} 
+```
  
 2. ~은~이다(is - a)관계이면 상속
 3. ~은~을 가지고 있다.(has - a)관계이면 포함
