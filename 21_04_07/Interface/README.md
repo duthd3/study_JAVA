@@ -6,7 +6,7 @@
  interface 인터페이스 이름{
             public static final 타입 상수이름 = 값;
             public abstract 메서드이름(매개변수);
-    }
+    }//항상 public static final, public abstract 이기 때문에 생략 가능하다.
  ```   
 - 모든 멤버변수는 public static final이여야 하며 ,생략가능 하다.
 - 모든 메서드는 public abstract 이어야 하며, 생략가능 하다.
