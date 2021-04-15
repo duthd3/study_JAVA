@@ -16,7 +16,7 @@ class SportsCar extends Car{
 ```
 
 
-` ### 포함
+- ### 포함
 1. 한 클래스의 멤버변수로 다른 클래스 타입의 참조변수를 선언하는 것이다.
 ```java
 class Circle{ //다른클래스와 관계가 없는경우      class Point{
@@ -33,7 +33,7 @@ class Circle{
 2. ~ 은~ 이다(is - a)관계이면 상속
 3. ~ 은~ 을 가지고 있다.(has - a)관계이면 포함
 
-` ### Object
+- ### Object
 1. Object클래스는 모든 클래스 상속계층도의 최상위에 있는 조상클래스이다. 
 2. to String()은 Object클래스에 정의된 것으로, 어떤 종류의 객체에 대해서도 toString()을 호출하는 것이 가능하다.
 
