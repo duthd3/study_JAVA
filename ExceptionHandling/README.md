@@ -94,10 +94,45 @@ void method() throws Exception1, Exception2, ExceptionN{
 ```
 -RuntimeException클래스의 자손은 적지 않는다.
 
+### 7.finally블럭
+- 예외의 발생여부에 상관없이 실행되어야할 코드를 포함시킬 목적으로 사용된다.
+- try-catch-finally의 순서로 구성된다.
+```java
+try{
+   //예외가 발생할 가능성이 있는 문장들을 넣는다.
+   }catch(Exception e1){
+   //예외처리를 위한 문장을 적는다.
+   }finally{
+   //예외의 발생여부에 관계없이 항상 수행되어야하는 문장들을 넣는다.
+   }
+```
+- 예외가 발생한경우 try-catch-finally순으로 실행되고, 발생하지 않은 경우에는 try-finally순으로 실행된다.
+- try블럭이나 catch블럭의 문상 수행중에 return문을 만나도 finally블럭의 문장들은 수행된다.
+    
+### 8.사용자정의 예외 만들기
+- 보통Exception클래스 또는 RuntimeException클래스로부터 상속받아 클래스를 만든다.
+```java
+class MyException extends Exception{
+   MyException(String msg){
+        super(Msg);
+   }     
+}
+```
 
-    
-    
-      
+### 8.예외 되던지기(exception re-throwing)
+- 예외를 처리한 후에 인위적으로 다시 발생시키는 방법.
+- 하나의 예외에 대해서 예외가 발생한 메서드와 이를 호출한 메서드 양쪽 모두에서 처리해줘야 할 작업이 있을 때 사용된다.
+
+### 9.연결된 예외(chained exception)
+- 에외A가 예외B를 발생시켰다면, A를B의 원인예외(cause exception)라고 한다.
+```java
+  Throwable initCause(Throwable cause) : 지정한 예외를 원인 예외로 등록
+  Throwable getCause() : 원인 예외를 반환
+```  
+- 여러가지 예외를 하나의 큰 분류의 예외로 묶어서 다루기 위해서 사용한다.
+- checked예외를 unchecked예외로 바꿀 수 있도록 하기 위해서 사용한다.
+
+
 
 
 
