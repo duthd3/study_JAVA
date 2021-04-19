@@ -72,9 +72,16 @@ a = a+b; //"a"가 "ab"로 변경되는 것이 아니라 새로운 문자열을 �
   char c = ' ';//공백으로 초기화
   ```
 - String클래스의 생성자와 메서드
-| 메서드/설명|예제|결과|
+
+|메서드/설명|예제|결과|
 |--|--|--|
 |String(String s)|String s = new String("Hello");|s = "Hello"|
 |주어진 문자열(s)을 갖는 String인스턴스를 생성한다.|
-|
+|String(char[] value)|char[]c={'H','e','l','l','o'};|s = "Hello"|
+|주어진 문자열(value)을 갖는 String인스턴스를 생성한다.|String s = new String(c)|
+|char charAt(int index)|String s = "Hello"|
+|지정된 위치(index)에 있는 문자를 알려준다.|char c = s.charAt(1);|c = 'e'|
+|int compareTo(String str)|int i = "aaa".compareTo("bbb");|i = -1|
+|문자열(str)과 사전순서로 비교한다. 같으면 0,사전순으로 이전이면 음수, 이후면 양수|  
+
   
