@@ -43,5 +43,38 @@
   Class cObj = Card.class; //클래스 리터럴로 부터 얻는 방법
   Class cObj = Class.forName("Card"); //클래스 이름으로 부터 얻는 방법
   ```
-  ### 2.String 
+### 2.String클래스
+- 데이터(char[]) + 메서드(문자열 관련).
+- 내용을 변경할 수 없는 불변(immutable) 클래스.
+```java
+String a = "a";
+String b = "b";
+a = a+b; //"a"가 "ab"로 변경되는 것이 아니라 새로운 문자열을 만들어 새로운 객체를 가르킨다.
+```
+- 문자열의 결합이나 변경이 잦다면, 내용을 변경가능한 StringBuffer를 사용
+- 문자열의 비교
+  ```java
+  String str = "abc"; //"abc"의 주소가 str1에 저장됨(공유)
+  String str2 = "abc"; //"abc"의 주소가 str2에 저장됨(공유)
+  String str3 = new String("abc"); //새로운String인스턴스를 생성
+  String str4 = new String("abc"); //새로운String인스턴스를 생성
+  ```
+  - 문자열은 equals()를 사용해서 내용 비교를 해야한다.
+- 문자열 리터럴
+  - 문자열 리터럴은 프로그램 실행시 자동으로 생성된다.(constant pool에 저장)
+  - 같은 내용의 문자열 리터럴은 하나만 만들어진다.
+  - 빈문자열("", empty string)
+    - 내용이 없는 문자열. 크기가 0인 char형 배열을 저장하는 문자열
+    - 크기가 0인 배열을 생성하는 것은 어느 타입이나 가능 
+- 문자와 문자열 초기화
+  ```java
+  String s = " ";//빈 문자열로 초기화
+  char c = ' ';//공백으로 초기화
+  ```
+- String클래스의 생성자와 메서드
+| 메서드/설명|예제|결과|
+|--|--|--|
+|String(String s)|String s = new String("Hello");|s = "Hello"|
+|주어진 문자열(s)을 갖는 String인스턴스를 생성한다.|
+|
   
