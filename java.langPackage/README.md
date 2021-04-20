@@ -84,27 +84,27 @@ a = a+b; //"a"가 "ab"로 변경되는 것이 아니라 새로운 문자열을 �
 |int compareTo(String str)|int i = "aaa".compareTo("bbb");|i = -1|
 |문자열(str)과 사전순서로 비교한다. 같으면 0,사전순으로 이전이면 음수, 이후면 양수|  
 
-### join()과 StringJoiner
-- join()은 여러문자열 사이에 구분자를 넣어서 결합한다.
-```java
-String animals = "dog,cat,bear";
-String[] arr = animals.split(","); //문자열을 ','를 구분자로 나눠서 배열에 저장
-String str = String.join("-", arr); //배열의 문자열을 '-'로 구분해서 결합
-System.out.println(str) // dog-cat-bear
-```
+- #### join()과 StringJoiner
+  - join()은 여러문자열 사이에 구분자를 넣어서 결합한다.
+  ```java
+  String animals = "dog,cat,bear";
+  String[] arr = animals.split(","); //문자열을 ','를 구분자로 나눠서 배열에 저장
+  String str = String.join("-", arr); //배열의 문자열을 '-'로 구분해서 결합
+  System.out.println(str) // dog-cat-bear
+  ```
 
-### 숫자를 문자열로 바꾸는 방법
-```java
-int i = 100;
-String str1 = i + ""; //편리
-String str2 = String.valueOf(i); //빠름
-```
-### 문자열을 숫자로 바꾸는 방법
-```java
-int i = Integr.parseInt("100"); //"100"을 100으로 변환하는 방법 1 (old)
-int i2 = Integer.valueOf("100"); //"100"을 100으로 변환하는 방법 2 (new)
-Integer i2 = Integer.valueOf("100") //원래는 반환 타입이 Integer, 기본형으로 써도 무방(오토박싱. Integer->int)
-```
+- #### 숫자를 문자열로 바꾸는 방법
+  ```java
+  int i = 100;
+  String str1 = i + ""; //편리
+  String str2 = String.valueOf(i); //빠름
+  ```
+- #### 문자열을 숫자로 바꾸는 방법
+  ```java
+  int i = Integr.parseInt("100"); //"100"을 100으로 변환하는 방법 1 (old)
+  int i2 = Integer.valueOf("100"); //"100"을 100으로 변환하는 방법 2 (new)
+  Integer i2 = Integer.valueOf("100") //원래는 반환 타입이 Integer, 기본형으로 써도 무방(오토박싱. Integer->int)
+  ```
 ### 3.StringBuffer클래스
 - String처럼 문자형 배열(char[])을 내부적으로 가지고 있다.
 - String과 달리 내용을 변경할 수 있다.(mutble)
