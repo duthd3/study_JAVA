@@ -105,9 +105,24 @@ int i = Integr.parseInt("100"); //"100"을 100으로 변환하는 방법 1 (old)
 int i2 = Integer.valueOf("100"); //"100"을 100으로 변환하는 방법 2 (new)
 Integer i2 = Integer.valueOf("100") //원래는 반환 타입이 Integer, 기본형으로 써도 무방(오토박싱. Integer->int)
 ```
-
-
-
+### 3.StringBuffer클래스
+- String처럼 문자형 배열(char[])을 내부적으로 가지고 있다.
+- String과 달리 내용을 변경할 수 있다.(mutble)
+- String과 달리 equals()가 오버라이딩되어있지 않다.(주소비교)
+  - StringBuffer을 String으로 변환 후에 equals()로 비교해야 한다.
+  ```java
+  StringBuffer sb = new StringBuffer("abc");
+  StringBuffer sb2 = new StringBuffer("abc");
+  
+  System.out.println(sp==sb2);//false
+  System.out.println(sb.equals(sb2));//false
+  
+  String s = sb.toString();  
+  String s2 = sb2.toString();
+  
+  System.out.println(s.equlas(s2)); //true
+  ```
+  
 
 
   
