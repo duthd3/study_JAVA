@@ -149,3 +149,6 @@ a = a+b; //"a"가 "ab"로 변경되는 것이 아니라 새로운 문자열을 �
 |float|Float|Float(double value), Float(float value), Float(String s)|Float f = new Float(1.0), Float f2 = new Float(1.0f), Float f3 = new Float("1.0f");|
 |double|Double|Double(double value), Double(String s)|Double d = new Double(1.0), | Double d2 = new Double("1.0");|
   
+### 7.NUmber클래스
+- 모든 숫자 래퍼 클래스의 조상.(추상 클래스)
+- 래퍼객체->기본형
