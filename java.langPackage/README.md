@@ -131,7 +131,21 @@ a = a+b; //"a"가 "ab"로 변경되는 것이 아니라 새로운 문자열을 �
   - 한번에 n개 작업(파일다운로드+채팅 등)
 - 싱글쓰레드
   - 한번에 1개 작업
-
-
-
+  - 
+### 5.Math클래스
+- 수학관련 static메서드의 집합.
+- round()로 원하는 소수점 아래 세 번째 자리에서 반올림.
+- 
+### 6.래퍼(wrapper)클래스
+-8개의 기본형을 객체로 다뤄야할 때 사용하는 클래스.(기본형을값을 감싸는 클래스)
+|기본형|래퍼클래스|생성자|활용예
+|--|--|--|--|
+|boolean|Boolean|Booleand(boolean value) ,   Boolean(String s)|Boolean b = new Boolean(treu); ,            Boolean b2 = new Boolean("true");|
+|char|Character|Character(char value)|Character c = new Character('a');|
+|byte|Byte|Byte(byte value),                 Byte(String s)|Byte b = new Byte(10);,  Byte b2= new Byte("10");|
+|short|Short|Short(short value), Short(String s)|Short s = new Short(10), Short s2 = new Short("10");|
+|int|Integer|Integer(int value), Integer(String s)|Integer i = new Integer(100), Integer i2 = new Integer("100");|
+|long|Long|Long(long value), Long(String s)|Long l = new Long(100), Long l2 = new long("100");|
+|float|Float|Float(double value), Float(float value), Float(String s)|Float f = new Float(1.0), Float f2 = new Float(1.0f), Float f3 = new Float("1.0f");|
+|double|Double|Double(double value), Double(String s)|Double d = new Double(1.0), | Double d2 = new Double("1.0");|
   
