@@ -148,7 +148,27 @@ a = a+b; //"a"가 "ab"로 변경되는 것이 아니라 새로운 문자열을 �
 |long|Long|Long(long value), Long(String s)|Long l = new Long(100), Long l2 = new long("100");|
 |float|Float|Float(double value), Float(float value), Float(String s)|Float f = new Float(1.0), Float f2 = new Float(1.0f), Float f3 = new Float("1.0f");|
 |double|Double|Double(double value), Double(String s)|Double d = new Double(1.0), | Double d2 = new Double("1.0");|
+- Number클래스
+ - 모든 숫자 래퍼 클래스의 조상.(추상 클래스)
+ - 래퍼객체->기본형
+- 문자열을 숫자로 변환하기
+  - 문자열->기본형
+  - byte b = Byte.parseByte("100")
+  - int i= Integer.parseInt("100");
+  - int i2 = Integer.parseInt("100", 2); //100이 2진법의 숫자
+ - 문자열을 래퍼클래스로 변환하기
+   - Byte b = Byte.valueOf("100");
+   - Integer i = Integer.valueOf("100");
+   - 
+- 오토박싱 & 언박싱(autoboxing & unboxing
+  - 기본형과 참조형 간의 자동 형변환
+  - int-->Integer(오토박싱)기본형->래퍼클래스(자동변환)
+  - Integer-->int(언박싱)래퍼클래스->기본형(자동변환)
   
-### 7.NUmber클래스
-- 모든 숫자 래퍼 클래스의 조상.(추상 클래스)
-- 래퍼객체->기본형
+  |컴파일 전의 코드|컴파일 후의 코드|
+  |--|--|
+  |int i = 5;|int i = 5;|
+  |Integer iObj = new Integer(7)|Integer iObj = new Integer(7);|
+  |int sum = i + iObj;|int sum = i + iObj.intValue();|
+  
+  
