@@ -18,5 +18,6 @@
     Calendar cal = Calendar.getInstance();
     cal.setTime(d);
 ```
+
 - add(int field, int amount)를 이용하면 지정한 필드의 값을 원하는 만큼 증가 또는 감소 시킬 수 있다.(다른 필드에 영향을 미친다.)
 - roll(int field, int amount)를 이용하면 지정한 필드의 값을 원하는 만큼 증가 또는 감소 시킬 수 있다.(다른 필드에 영향을 미치지 않는다.)
