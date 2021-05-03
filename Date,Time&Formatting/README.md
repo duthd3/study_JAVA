@@ -21,3 +21,18 @@
 
 - add(int field, int amount)를 이용하면 지정한 필드의 값을 원하는 만큼 증가 또는 감소 시킬 수 있다.(다른 필드에 영향을 미친다.)
 - roll(int field, int amount)를 이용하면 지정한 필드의 값을 원하는 만큼 증가 또는 감소 시킬 수 있다.(다른 필드에 영향을 미치지 않는다.)
+
+# 형식화 클래스
+## 1.DecimalFormat
+  - 숫자와 날짜를 원하는 형식으로 쉽게 출력 가능(숫자, 날짜 ->형식 문자열)
+  ```java
+  double number = 1234567.89;
+  DeciamlFormat df = new DecimalFormat("#.#E0");
+  String result = df.format(number); //result = "1.2E6"
+  ```
+  -형식 문자열에서 숫자와 날짜를 뽑아내는 기능(형식 문자열 -> 숫자, 날짜)
+  ```java
+  DecimalFormat df = new DecimalFormat("#,###.##");
+  Number num =df.parse("1,234,567.89");
+  double d = num.doubleValue();
+  ```
