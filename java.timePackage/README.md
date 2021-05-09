@@ -35,3 +35,73 @@
   Instant toInstant() // Date -> Instant
   ```
   
+## 4.LocalDateTime & ZonedDateTime
+```
+LocalDate + LocalTime -> LocalDateTime
+LoclaDateTime + 시간대 -> ZonedDateTime
+```
+  - ### LocalDate와 LocalTime으로 LocalDateTime만들기
+  ```
+  LocalDate date = LocalDate.of(2015, 12, 31);
+  LocalTime time = LocalTime.of(12, 34, 56);
+  
+  LocalDateTime dt = LocalDateTime.of(date, time);
+  LocalDateTime dt2 = date.atTime(time);
+  LocalDateTime dateTime = LocalDateTime.of(2015, 12, 31, 12, 34, 56);
+  LocalDateTime today = LocalDateTime.now();
+  ```
+  
+  - ### LocalDateTime의 변환
+  ```java
+  LocalDateTime dt = LocalDateTime.of(2015, 12, 31, 12, 34, 56);
+  LocalDate date = dt.toLocalDate(); // LocalDateTime ->LocalDate
+  LocalTime time = dt.toLocalTime(); // LocalDateTime ->LocalTime
+  ```
+  - ### LocalDateTime으로 ZonedDateTime만들기
+    - LocalDateTime에 시간대(time-zone)를 추가하면, ZonedDateTime이 된다.
+    ```java
+    ZoneId zid = ZoneId.of("Asia/Seoul");
+    ZonedDateTime zdt = dateTime.atZone(zid);
+    System.out.println(zdt);
+    ```
+    ```java
+    ZonedDateTime zdt = LocalDate.now().atStatrtOfDay(zid);
+    System.out.println(zdt);
+    ```
+    
+  - ### ZoneOffset
+    - UTC로부터 얼마만큼 떨어져 있는지를 ZoneOffSet으로 표현한다.
+    - 서울은'+9'이다.->UTC보다 9시간 빠르다.
+
+  - ### OffsetDateTime
+    - 서로 다른 시간대에 존재하는 컴퓨터간의 통신에는 OffsetDateTime이 필요하다.
+    ```java
+    ZonedDateTime zdt = ZondedDateTime.of(date, time, zid);
+    OffsetDateTime odt = OffsetDateTime.of(date, time, krOffset);
+    
+  - ### ZonedDateTime의 변환
+    - LocalDate  ->  toLocalDate()
+    - LocalTime  ->  toLocalTime()
+    
+## 5.TemporalAdjusters     
+- 자주 쓰일만한 날짜 계산들을 대신 해주는 메서드를 정의해놓은 클래스.
+
+## 6.Period와 Duration 
+```java
+날짜 - 날짜 = period
+시간 - 시간 = Duration
+```
+  - ### between()
+    - 두 날짜 간의 차이
+    ```java
+    LocalDate date1 = LocalDate.of(2014, 1, 1);
+    LocalDate date2 = LocalDate.of(2015, 12, 31);
+    
+    Period pe = Period.between(date1, date2);
+    ``` //Duration 마찬가지.
+    
+  - ###between() & until()
+    - between()은 static메서드, until()은 인스턴스 메서드.
+    
+## 7.파싱과 포맷
+
