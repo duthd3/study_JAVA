@@ -38,3 +38,11 @@ class Node{
 
 - 순차적으로 추가/삭제하는 경우에는 ArrayList가 LinkedList보다 빠르다.
 - 중간 데이터를 추가/삭제하는 경우에는 LinkedList가 ArrayList보다 빠르다.
+
+## 4.Stack&Queue
+- 스택은 마지막에 저장한 데이터를 가장 먼저 꺼내는 LIFO구조.
+  - 순차적으로 데이터를 추가하고 삭제하기 때문에 ArrayList와 같은 배열기반의 컬렉션 클래스가 적합.
+- 큐는 처음에 저장한 데이터를 가장 먼저 꺼내게 되는 FIFO 구조.
+  - 데이터의 추가/삭제가 쉬운 LinkedList로 구현하는 것이 적합.
+- 스택은 Stack클래스로 구현, 큐는 Queue인터페이스로 정의 해놓음.
+
