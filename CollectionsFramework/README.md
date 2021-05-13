@@ -35,3 +35,6 @@ class Node{
       Object obj;
 }
 ```
+
+- 순차적으로 추가/삭제하는 경우에는 ArrayList가 LinkedList보다 빠르다.
+- 중간 데이터를 추가/삭제하는 경우에는 LinkedList가 ArrayList보다 빠르다.
