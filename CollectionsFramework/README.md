@@ -46,3 +46,18 @@ class Node{
   - 데이터의 추가/삭제가 쉬운 LinkedList로 구현하는 것이 적합.
 - 스택은 Stack클래스로 구현, 큐는 Queue인터페이스로 정의 해놓음.
 
+## 5.Iterator,ListIterator,Enumeration
+- Iterator,ListIterator,Enumeration은 모두 컬렉션에 저장된 요소를 접근하는데 사용되는 인터페이스이다.
+  - ### Iterator
+    - 컬렉션에 저장된 각 요소에 접근하는 기능을 가진 Iterator인터페이스 정의.
+    - Collection인터페이스에는 Iterator를 반환하는 iterator()를 정의하고 있다.
+    - iterator()는 Collection인터페이스에 정의된 메서드 이므로 Collection인터페이스의 자손인 List와 Set에도 포함되어 있다.
+    
+    |메서드|설명|
+    |--------|-------|
+    |boolean hasNext()|읽어 올 요소가 남아있는지 확인한다.있으면true 없으면 false를 반환.|
+    |Object next()|다음 요소를 읽어 온다. next()를 호출하기 전에 hasNext()를 호출해서 읽어올 요소가 있는지 확인하는 것이 안전.|
+    
+  - ### ListIterator, Enumeration
+    - Enumeration:Iterator 의 구버전
+    - ListIterator:Iterator에 양방향 조회기능추가(List를 구현한 경우만 사용가능)
