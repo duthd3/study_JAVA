@@ -121,3 +121,45 @@ Comparator 기본 정렬기준 외에 다른기준으로 정렬하고자할 때 
 - 검색(범위검색)과 정렬에 유리하다.
 - 중복된 값을 저장하지 못한다.
 ```
+
+## 10.HashMap과 Hashtable (순서X, 중복(키X,값O))
+- Hashtable과 HashMap의 관계는 Vector와 ArrayList의 관계와 같아서 Hashtable보다는 새로운 버전인 HashMap을 사용할 것을 권한다.
+- 키(key)와 값(value)을 묶어서 하나의 데이터(entry)로 저장한다.
+- 해싱(hashing)을 사용하기 때문에 많은 양의 데이터를 검색하는데 있어서 뛰어난 성능을 보인다.
+```
+키(key) 컬렉션 내의 키(key) 중에서 유일해야 한다.
+값(value) 키(key)와 달리 데이터의 중복을 허용한다.
+```
+- 키는 저장된 값을 찾는데 사용되는 것이기 때문에 컬렉션 내에서 유일 해야 한다.
+``` 
+해싱과 해시함수
+해싱이란 해시함수를 이용해서 데이터를 해시테이블에 저장하고 검색하는 기법을 만한다.
+해시함수는 데이터가 저장되어 있는곳을 알려준다.
+해싱에서 사용하는 자료구조는 배열과 링크드리스트의 조합으로 되어 있다.
+```
+
+## 11.TreeMap
+- 검색(탐색)에 관한한 대부분의 경우에서 HashMap이 TreeMap보다 더 뛰어나므로 HashMap을 사용하는 것이 좋다.
+- 범위검색이나 정렬이 필요한 경우에는 TreeMpa을 사용하는 것이 좋다.
+
+## 12.Properties
+- 키와 값을 (String, String)의 형태로 저장한다.
+
+## 13.Collections
+- 컬렉션과 관련된 메서드를 제공한다.
+- 컬렉션의 동기화
+  - 동기화 메서드를 이용해서 동기화 처리가 가능하다.
+  ```java
+  List syncList = Collections.synchronizedList(new ArrayList(...));
+  ```
+- 변경불가 컬렉션 만들기
+  - unmodifiable메서드 이용
+- 싱글톤 컬렉션 만들기
+  - 단 하나의 객체만을 저장하는 컬렉션을 만들 때 사용
+  - singleton메서드 이용
+- 한 종류의 객체만 저장하는 컬렉션 만들기
+  - checked메서드 이용
+  ```
+  List list = new ArrayList();
+  List checkedList = checkedList(list, String.class); //String
+  ```
