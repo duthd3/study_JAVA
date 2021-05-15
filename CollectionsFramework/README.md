@@ -61,3 +61,63 @@ class Node{
   - ### ListIterator, Enumeration
     - Enumeration:Iterator 의 구버전
     - ListIterator:Iterator에 양방향 조회기능추가(List를 구현한 경우만 사용가능)
+
+## 6.Arrays
+  - ### 배열의 복사:copyOf(), copyOfRange()
+    - copyOf()는 배열전체를, copyOfRange()는 배열의 일부를 복사해서 새로운 배열을 만들어 반환한다.
+    ```java
+    int[] arr = {0,1,2,3,4};
+    int[] arr2 = Arrays.copyOf(arr, arr.length); // arr2=[0,1,2,3,4]
+    int[] arr3 = Arrays.copyOf(arr, 3); //arr3=[0,1,2]
+    int[] arr4 = Arrays.copyOfRange(arr, 2, 4) // arr4=[2,3]
+    int[] arr5 = Arrays.copyOfRange(arr, 0 ,7) // arr5=[0,1,2,3,4,0,0]
+    ```
+  
+  - ### 배열 채우기:fill(), setAll()  
+    - fill()은 배열의 모든 요소를 지정된 값으로 채운다. 
+    - setAll()은 배열을 채우는데 사용할 함수형 인터페이스를 매개변수로 받는다.(함수형 인터페이스를 매개변수로 받던가, 람다식 지정)
+    ```
+    int[] arr = new int[5];
+    Arrays.fill(arr, 9); //arr=[9,9,9,9,9]
+    Arrays.setAll(arr, () -> (int)(Math.random()*5)+1); //arr=[1,5,2,1,1]<-random
+    ```
+  - ### 배열의 정렬과 검색:sort(), bianrySearch()
+    - sort()는 배열을 정렬할 때.
+    - binarySearch()는 저장된 요소를 검색할 때.(반드시 배열이 정렬된 상태이어야 올바른 결과를 얻는다.)
+
+  - ### 배열의 비교와 출력:equals(), toString()
+    - toString()은 배열의 모든 요소를 문자열로 출력.(일차원 배열에만 사용)
+    - 2차원 배열은 deepToString() 사용.
+    - equals()는 일차원 배열에 사용.
+    - 2차우너 배열은 deepEquals() 사용.
+
+  - ### 배열을 List로 변환:asList(Object...a)
+    ```java
+    List list = Arrays.asList(new Integer[]{1,2,3,4,5});
+    List list = Arrays.asList(1,2,3,4,5);
+    list.add(6); //UnsupportedOperationException 예외 발생
+    - asList()가 반환한 List의 크기를 변경할 수없다.
+    - 추가 또는 삭제가 불가능 하다. 저장된 내용은 변경가능하다.
+  
+## 7.Comparator와 Comparable
+```
+Comparable 기본 정렬기준을 구현하는데 사용.
+Comparator 기본 정렬기준 외에 다른기준으로 정렬하고자할 때 사용.
+```
+
+## 8.HashSet (순서X,중복X)
+- HashSet은 중복된 요소를 저장하지 않는다.
+- HasgSet은 저장순서를 유지하지 않으므로 저장순서를 유지하고자 한다면 LinkedHashSet을 사용해야한다.
+
+
+## 9.TreeSet (정렬,범위검색에 유리)
+- 중복된 데이터의 저장을 허용하지 않으며 정렬된 위치에 저장하므로 저장순서를 유지하지도 않는다.
+- 이진 검색 트리(binary search tree)는 부모노드에 왼쪽에는 부모노드의 값보다 작은 값의 자식노드를 오른쪽에는 큰 값의 자식노드를 저장하는 이진 트리이다.
+```
+이진 검색 트리(binary search tree)는
+- 모든 노드는 최대 두개의 자식노드를 가질 수 있다.
+- 왼쪽 자식노드의 값은 부모노드의 값보다 작고 오른쪽자식노드의 값은 부모노드의 값보다 커야한다.
+- 노드의 추가 삭제에 시간이 걸린다.(순차적으로 저장하지 않으므로)
+- 검색(범위검색)과 정렬에 유리하다.
+- 중복된 값을 저장하지 못한다.
+```
