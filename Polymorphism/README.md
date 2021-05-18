@@ -43,4 +43,33 @@
 어떤 타입에 대한 instanceof연산의 결과가 true라는 것은 검사한 타입으로 형변환이 가능하다는 것을 뜻한다.
 ```
 
+## 4.참조변수와 인스턴스의 연결
+- 메서드의 경우 조상클래스의 메서드를 자손의 클래스에서 오버라이딩한 경우에도 참조변수의 타입에 관계없이 항상 실제 인스턴스의 메서드 호출.
+- 멤버변수의 경우 참조변수의 타입에 따라 달라진다.
+
+## 5.매개변수의 다형성
+- 메서드의 매개변수에 다형성을 적용 시킬 수 있다.
+```java
+class Product{
+  int price;
+  int bonusPoint;
+  }
+class Tv extends Product{}
+class Computer extends Product{}
+
+class Buyer{
+  int money=100;
+  int bonusPoint = 0;
+  void buy(Product p){ //Product 클래스를 상속받은 자손은 누구나 올 수 있다.
+   ...
+  }
+```  
+
+## 6.여러 종류의 객체를 배열로 다루기
+- 조상타입의 참조변수 배열을 사용하면, 공통의 조상을 가진 서로 다른 종류의 객체를 배열로 묶어서 다룰 수 있다.
+```java
+Product[p] = new Product[3];
+p[0] = new Tv();
+p[1] = new Computer();
+```
   
