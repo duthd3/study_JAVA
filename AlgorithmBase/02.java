@@ -13,6 +13,20 @@ public class Main2 {
 			arr[i] = arr[i-1]+arr[i-2];
 			System.out.print(arr[i]+" ");
 		}
+		System.out.println();
+		//2번쨰 방법.
+		int prevPrevNum = 1; //An-2
+		int preNum = 1; //An-1
+		int temp=0;
+		System.out.print(prevPrevNum+" ");
+		System.out.print(preNum+" ");
+		for(int i=2; i<10; i++) {
+			System.out.print(prevPrevNum+preNum+" ");
+			
+			temp=prevPrevNum;
+			prevPrevNum=preNum;
+			preNum=temp+preNum;
+		}
 	}
 
 }
