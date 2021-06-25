@@ -77,4 +77,34 @@ Thread(ThreadGroup group, Runnable target, String name, long stackSize)
 ```java
 ThreadGroup getThreadGroup() // 쓰레드 자신이 속한 쓰레드 그룹을 반환한다.
 void uncaughtException(Thread t, Throwable e) //쓰레드 그룹의 쓰레드가 처리되지 않은 예외에 의해 실행이 종료되었을때, JVM에 의해서 이메서드가 자동적으로 호출된다.
+```
 
+## 7.데몬 쓰레드
+- 일반쓰레드의 작업을 돋는 보조적인 역할을 수행하는 쓰레드 이다.
+- 일반쓰레드가 모두 종료되고 나면 데몬 쓰레드도 종료된다.
+- 무한루프와 조건문을 이용해서 실행 후 대기하고 있다가 특정 조건이 만족 되면 작업을 수행하고 다시 대기하도록 한다.
+- 쓰레드를 생성한 다음 실행하기 전에 setDaemon(true)를 호출한다.
+
+## 8.쓰레드의 실행제어
+|상태|설명|
+|--|--|
+|NEW|쓰레드가 생성되고 아직 start()가 호출되지 않은 상태|
+|RUNNABLE|실행중 또는 실행 가능한 상태|
+|BLOCKED|동기화블럭에 의해서 일시정지된 상태|
+|WAITING, TIMED_WAITNG|쓰레드의 작업이 종료되지는 않았지만 실행가능하지 않은 일시정지 상태|
+|TERMINATED|쓰레드의 작업이 종료된 상태|
+
+- sleep(long millis) : 일정시간동안 쓰레드를 멈추게 한다.
+```java
+static void sleep(long millis)
+static void sleep(long millis, int nanos)
+```
+  - sleep()에 의해 일시정지 상태가 된 쓰레드는 지정된 시간이 다 되거나 interrupt()가 호출되면 잠에서 깨어나 실행대기 상태가 된다.
+  - InterruptedException예외가 발생하기 때문에 항상 try-catch문으로 예외를 처리해줘야 한다.
+
+- interrupt(), interrupted() : 쓰레드의 작업을 취소한다.
+```java
+void interrupt() - 쓰레드의 interrupted상태를 false에서 true로 변경
+boolean isInterrupted() - 쓰레드의  interrupted상태를 반환
+static boolean interrupted() - 현재 쓰레드의 interrupted상태를 반환 후, false로 변경
+```
