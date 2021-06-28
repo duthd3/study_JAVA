@@ -108,3 +108,20 @@ void interrupt() - 쓰레드의 interrupted상태를 false에서 true로 변경
 boolean isInterrupted() - 쓰레드의  interrupted상태를 반환
 static boolean interrupted() - 현재 쓰레드의 interrupted상태를 반환 후, false로 변경
 ```
+
+- suspend(), resume(), stop()
+  - suspend()는 sleep()처럼 쓰레드를 멈추게 한다.(resume()을 호출해야 다시 실행대기 상태가 된다.)
+  - stop()은 호출되는 즉시 쓰레드가 종료된다.
+  - suspend()와 stop()은 교착상태를 일으키기 쉽게 작성되어있어 사용이 권장되지 않는다.(deprecated)
+  
+- yield():다른 쓰레드에게 양보한다.
+  - yield()는 쓰레드 자신에게 주어진 실행시간을 다음 차례의 쓰레드에게 양보한다.
+  
+- join():다른 쓰레드의 작업을 기다린다. 
+```java
+void join()
+void join(long millis)
+void join(long millis, int nanos)
+```
+
+- 9.쓰레드의 동기화
