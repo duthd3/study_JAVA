@@ -125,3 +125,22 @@ void join(long millis, int nanos)
 ```
 
 - 9.쓰레드의 동기화
+- 한 쓰레드가 진행중인 작업을 다른 쓰레드가 간섭하지 못하도록 막는 것을 '쓰레드의 동기화' 라고 한다.
+- 1. synchronized를 이용한 동기화(임계영역을 설정)
+  ```java
+  1.메서드 전체를 임계영역으로 지정
+      public synchronized void calcSum(){
+      }
+  2. 특정한 영역을 임계영역으로 지정
+      synchronized(객체의 참조변수) {
+      }
+  ```    
+- 2. wait()와 notify()
+  - wait():실행중이던 쓰레드가 lock을 반납(대기실 입장)
+  - notify():대기실에 있던 모든 쓰레드 중에서 임의의 쓰레드만 lock을 다시 얻어 작업진행(lock은 오직 하나의 쓰레드만 얻을 수 있다.)
+  ```java
+  wait(), notify(), notifyAll()
+  - Object에 정의되어 있다.
+  - 동기화 블록내에서만 사용할 수 있다.
+  - 보다 효율적인 동기화를 가능하게 한다.
+  ```
