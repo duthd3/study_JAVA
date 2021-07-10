@@ -48,4 +48,12 @@
   
 ## 4.java.util.function패키지
 
-  
+
+## 5.Function의 합성과 Predicate의 결합
+  - Function의 합성
+    - f.andThen(g)는 f를 먼저 적용, 그 다음에 함수 g를 적용한다.
+    - f.compose(g)는 g를 먼저 적용, 그 다음에 함수 f를 적용한다.
+    - identity()는 함수를 적용하기 이전과 이후가 동일한 항등 함수.
+  - Predicate의 결합
+    - and(),or(),negate()로 연결해서 하나의 새로운 Predicate로 결합할 수 있다.
+    -   
