@@ -56,4 +56,25 @@
     - identity()는 함수를 적용하기 이전과 이후가 동일한 항등 함수.
   - Predicate의 결합
     - and(),or(),negate()로 연결해서 하나의 새로운 Predicate로 결합할 수 있다.
-    -   
+       
+## 6.메서드 참조
+  - 람다식이 하나의 메서드만 호출하는 경우에는 '메서드 참조' 라는 방법으로 람다식을 간략히 할 수 있다.
+  ```java
+    Function<String, Integer> f = (String s) -> Integer.parseInt(s);
+                               ∇
+    Function<String, Integer> f = Integer::parseInt;
+    
+    하나의 메서드만 호출하는 람다식은 '클래스이름::메서드이름' 또는 '참조변수::메서드이름'으로 바꿀 수 있다.
+  ```
+  
+  - 생성자의 메서드 참조
+  ```java
+    Supplier<MyClass> s = () -> new MyClass();
+    Supplier<MyClass> s = MyClass::new;
+  ```
+  - 배열을 생성할 때
+  ```java
+    Function<Integer, int[]> f = x->new int[x];
+    Function<Integer, int[]> f = int[]::new;
+  ```
+  
