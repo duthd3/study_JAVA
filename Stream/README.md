@@ -90,4 +90,25 @@
     - iterate()는 씨앗값(seed)로 지정된 값부터 시작해서, 람다식 f에 의해 계산된 결과를 다시seed 값으로 해서 계산을 반복.
     - generate()도 iterate()처럼 람다식에 의해 계산되는 값을 요소로 하는 무한스트림 생성. 그러나 seed 사용 x.
   
+## 3.스트림의 중간연산  
+  - 스트림 자르기:skip(), limit()
+  ```java
+  Stream<T> skip(long n)
+  Stream<T> limit(long maxSize)
+  ```
+  - 스트림의 요소 걸러내기:filter(), distinct()
+    - distinct():스트림에서 중복된 요소들을 제거
+    - filter():주어진 조건에 맞지 않는 요소를 걸러낸다.
+  - 정렬:sorted()
+  ```java
+  Stream<T> sorted()
+  Stream<T> sorted(Comparator<? super T> comparator)
+  ```
+  - 변환:map()
+  - T타입을 R타입으로 변환.
+  ```java
+  Stream<R> map(Function<? super T, ? extends R> mapper)  
+  ```
+
+  - 조회:peek()
   
