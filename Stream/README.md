@@ -34,3 +34,60 @@
     - 스트림으로 데이터를 다룰 떄의 장점 중 하나가 바로 병렬 처리가 쉽다는 것이다.
     - parallel()이라는 메서드를 호출하면 병렬로 연산을 수행한다.
     - sequential()이라는 메서드를 호출하면 병렬로 처리되지 않는다.(parallel()을 호출한 것을 취소할 때만 사용한다.)
+
+## 2.스트림 만들기
+  - Collection에 stream()이 정의되어 있다.
+  ```java
+  Stream<T> Collection.stream()
+  
+  List<Integer> list = Arrays.asList(1,2,3,4,5);
+  Stream<Integer> intStream = list.stream();
+  ```
+  - forEach()는 지정된 작업을 스트림의 모든 요소에 대해 수행한다.
+  - forEach()가 스트림의 요소를 소모하면서 작업을 수행하므로 같은 스트림에forEach()를 두번 호출할 수 없다.
+  - 스트림의 요소를 한번 더 출력하려면 스트림을 새로 생성해야 한다.
+  
+  - 배열 스트림
+  ```java
+  Stream<T> Stream.of(T...values)가변인자
+  Stream<T> Stream.of(T[])
+  Stream<T> Arrays.stream(T[])
+  Stream<T> Arrays.stream(T[] array, int startInclusive, int endExclusive)
+  ```
+  - 기본형배열 스트림
+  ```java
+  IntStream IntStream.of(int.. values)
+  IntStream IntStream.of(int[])
+  IntStream Arrays.stream(int[])
+  IntStream Arrays.stream(int[] array, int startInclusive, int endExclusvie)
+  ```
+  - 특정 범위의 정수
+  ```java
+  IntStream IntStream.range(int begin, int end)->end는 범위에 포함되지 않는다.
+  IntStream IntStream.rangeClosed(int begin, int end)->end가 범위에 포함된다.
+  ```
+  - 임의의 수
+    - IntStream ints()
+    - LongStream longs()
+    - DoubleStream doubles()
+    - 위 메서드들은 무한 스트림을 반환한다.
+    - limit()을 이용하여 무한 스트림을 유한 스트림으로 만들수 있다..
+    ```java
+    IntStream intStream = new Random().ints();
+    intStream.limit(5).forEach(System.out::println);
+    ```
+    - 유한 스트림
+      - IntStream ints(long streamSize)
+      - LongStream longs(long streamSize)
+      - DoubleStream doubles(logn streamSize)
+  
+  - 람다식:iterate(), generate()
+    - 람다식을 매개변수로 받아서 이 람다식에 의해 계산되는 값들을 요소로 하는 무한 스트림을 생성.
+    ```java
+    static <T> Stream<T> iterate(T seed, UnaryOperator<T> f)
+    static <T> Stream<T> generate(Supplier<T> s)
+    ```
+    - iterate()는 씨앗값(seed)로 지정된 값부터 시작해서, 람다식 f에 의해 계산된 결과를 다시seed 값으로 해서 계산을 반복.
+    - generate()도 iterate()처럼 람다식에 의해 계산되는 값을 요소로 하는 무한스트림 생성. 그러나 seed 사용 x.
+  
+  
