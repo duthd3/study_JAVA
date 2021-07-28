@@ -112,3 +112,29 @@
 
   - 조회:peek()
   
+## 4.Optional<T>, OptionalInt
+- Optional<T>는 지네릭 클래스로, 'T타입의 객체'를 감싸는 래퍼 클래스 이다.
+- 최종 연산의 결과를 그냥 반환 하는게 아니라 Optional객체에 담아서 반환.
+- 반환된 결과가 null인지 매번 if문으로 체크하는 대신 Optional에 정의된 메서드를 통해서 간단히 처리 가능.
+- Optional객체 생성.
+  - of()또는 ofNullable()사용.
+```java
+String str = "abc";
+Optional<String> optVal = Optional.of(str);
+Optional<String> optVal = Optional.of("abc");
+Optional<String> optVal = Optional.of(new String("abc"));
+```
+  - of()는 매개변수의 값이 Null이면 NullPointerException 발생.(ofNullable()사용)
+  - Optional<T> 타입의 참조변수를 초기화 할때는 empty()사용.
+- Optional객체의 값 가져오기
+  - get(),ofElse()사용.
+```java
+Optional<String> optVal = Optional.of("abc");
+String str1 = optVal.get(); //optVal에 저장된 값을 반환. null이면 예외 발생
+String str2 = optVal.orElse(""); //optVal에 저장된 값이 null일 때는, ""를 반환
+```
+- Optional객체에도 filter(), map(), flatMap()을 사용할 수 있다.
+- isPresent()는 Optional객체의 값이 null이면 false를, 아니면 true를 반환한다.
+- OptionalInt, OptionalLong, OptionalDouble
+
+  
