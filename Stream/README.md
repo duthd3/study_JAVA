@@ -137,4 +137,12 @@ String str2 = optVal.orElse(""); //optVal에 저장된 값이 null일 때는, ""
 - isPresent()는 Optional객체의 값이 null이면 false를, 아니면 true를 반환한다.
 - OptionalInt, OptionalLong, OptionalDouble
 
-  
+## 5.스트림의 최종연산
+- 최종연산은 스트림의 요소를 소모. 한번 만 수행가능.
+- forEach()
+- 조건 검사:allMatch(), anyMatch(), noneMatch(), findFirst(), findAny()
+- 통계:count(), sum(), average(), max(), min()
+- reduce()
+  - 스트림의 요소를 줄여가면서 연산을 수행.
+  - 모든 요소를 소모하게 되면 그 결과를 반환.
+  - 초기값(identity), 연산(Binary Operator)으로 스트림의 요소를 줄인다.
