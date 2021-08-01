@@ -146,3 +146,5 @@ String str2 = optVal.orElse(""); //optVal에 저장된 값이 null일 때는, ""
   - 스트림의 요소를 줄여가면서 연산을 수행.
   - 모든 요소를 소모하게 되면 그 결과를 반환.
   - 초기값(identity), 연산(Binary Operator)으로 스트림의 요소를 줄인다.
+
+## 6.collect()
